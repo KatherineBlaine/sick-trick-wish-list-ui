@@ -15,7 +15,6 @@ const App = () => {
       const response = await fetch(url);
       const tricks = await response.json();
       setTricks(tricks)
-      console.log(tricks)
     } catch(error) {
       setError(error.message)
     }
@@ -29,7 +28,6 @@ const App = () => {
     setTricks([...tricks, newTrick])
   }
 
-
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
@@ -37,7 +35,6 @@ const App = () => {
       <Tricks tricks={tricks}/>
     </div>
   );
-
 }
 
 export default App;

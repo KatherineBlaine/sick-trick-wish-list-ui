@@ -33,6 +33,5 @@ describe('Home DOM on page load', () => {
     cy.get('.card > :nth-child(1)').should('be.visible')
     cy.get('.card > :nth-child(2)').should('be.visible').contains('flat ground')
     cy.get('.card > :nth-child(3)').should('be.visible').contains('https://www.youtube.com/watch?v=XGw3YkQmNig')
-
   })
 })

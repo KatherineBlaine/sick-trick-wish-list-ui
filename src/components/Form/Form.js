@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Form.css';
 
 const Form = ( {addTrick} ) => {
@@ -36,9 +37,13 @@ const Form = ( {addTrick} ) => {
         <option value='pool'>Pool</option>
       </select>
       <input name='tutorial' type='text' placeholder='Link to Tutorial' className='input' onChange={(event) => setTutorial(event.target.value)}/>
-      <button className='input' onClick={submitTrick}>Send it!</button>
+      <button onClick={submitTrick}>Send it!</button>
     </form>
   )
 }
 
 export default Form;
+
+Form.propTypes = {
+  addTrick: PropTypes.func.isRequired
+}

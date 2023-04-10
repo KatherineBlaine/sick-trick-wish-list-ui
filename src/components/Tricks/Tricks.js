@@ -1,7 +1,8 @@
 import Trick from '../Trick/Trick';
+import PropTypes from 'prop-types';
 import './Tricks.css';
 
-const Tricks = ( {tricks} ) => {
+const Tricks = ( { tricks } ) => {
   const trickCards = tricks.map(trick => {
     return (
       <Trick 
@@ -23,3 +24,7 @@ const Tricks = ( {tricks} ) => {
 }
 
 export default Tricks;
+
+Tricks.propTypes = {
+  tricks: PropTypes.arrayOf(PropTypes.object)
+}

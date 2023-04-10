@@ -1,6 +1,16 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
   background-color: white;
-  width: fit-content;
+  width: 20vw;
+  height: max-content;
   padding: 20px;
   border-radius: 5px;
+  background-color: aliceblue;
+}
+
+.title {
+  font-size: 20px;
 }
