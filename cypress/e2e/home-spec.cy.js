@@ -18,7 +18,7 @@ describe('Home DOM on page load', () => {
     cy.get('[name="name"]').should('be.visible')
     cy.get('[name="obstacle"]').should('be.visible')
     cy.get('[name="tutorial"]').should('be.visible')
-    cy.get('button.input').should('be.visible')
+    cy.get('button').should('be.visible')
   })
 
   it('Should display trick cards that contain the trick name, obstacle, stance, and tutorial link', () => {
@@ -32,6 +32,7 @@ describe('Home DOM on page load', () => {
 
     cy.get('.card > :nth-child(1)').should('be.visible')
     cy.get('.card > :nth-child(2)').should('be.visible').contains('flat ground')
-    cy.get('.card > :nth-child(3)').should('be.visible').contains('https://www.youtube.com/watch?v=XGw3YkQmNig')
+    cy.get('.card > :nth-child(3)').should('be.visible').contains('Link to Tutorial:')
+    cy.get(':nth-child(1) > a').should('be.visible').contains('https://www.youtube.com/watch?v=XGw3YkQmNig')
   })
 })

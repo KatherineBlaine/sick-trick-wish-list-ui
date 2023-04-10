@@ -19,8 +19,8 @@ describe('Add trick form', () => {
     cy.get('[name="tutorial"]').should('have.value', 'https://www.youtube.com/watch?v=9N9swrZU1HA')
   })
 
-  it('Should be able to click the submit button to view their added trick on the DOM', () => {
-    cy.get('button.input').click()
+  it('Should be able to display the newly added trick to the DOM when the submit button is clicked', () => {
+    cy.get('button').click()
 
     cy.get('.card-container > :nth-child(1)').should('be.visible')
     cy.get('.card-container > :nth-child(2)').should('be.visible')
@@ -33,6 +33,7 @@ describe('Add trick form', () => {
 
     cy.get('.card-container > :nth-child(2) > :nth-child(1)').should('be.visible')
     cy.get('.card-container > :nth-child(2) > :nth-child(2)').should('be.visible').contains('stairs')
-    cy.get('.card-container > :nth-child(2) > :nth-child(3)').should('be.visible').contains('https://www.youtube.com/watch?v=9N9swrZU1HA')
+    cy.get('.card-container > :nth-child(2) > :nth-child(3)').should('be.visible').contains('Link to Tutorial')
+    cy.get(':nth-child(2) > a').should('be.visible').contains('https://www.youtube.com/watch?v=9N9swrZU1HA')
   })
 })
