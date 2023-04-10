@@ -25,11 +25,15 @@ const App = () => {
     getTricks()
   }, [])
 
+  const addTrick = (newTrick) => {
+    setTricks([...tricks, newTrick])
+  }
+
 
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
-      <Form />
+      <Form addTrick={addTrick}/>
       <Tricks tricks={tricks}/>
     </div>
   );

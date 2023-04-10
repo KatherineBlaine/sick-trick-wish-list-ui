@@ -1,21 +1,34 @@
 import { useState, useEffect } from 'react';
 import './Form.css';
 
-const Form = () => {
+const Form = ( {addTrick} ) => {
   const [name, setName] = useState('')
   const [obstacle, setObstacle] = useState('')
   const [stance, setStance] = useState('')
   const [tutorial, setTutorial] = useState('')
 
+  const submitTrick = event => {
+    event.preventDefault();
+    const newTrick = {
+      id: Date.now(),
+      name,
+      stance,
+      obstacle,
+      tutorial
+    }
+    addTrick(newTrick)
+  }
+
+
   return (
     <form>
-      <select name='stance'>
+      <select name='stance' onChange={(event) => setStance(event.target.value)}>
         <option value=''>Choose Your Stance</option>
         <option value="regular">Regular</option>
         <option value="switch">Switch</option>
       </select>
-      <input type='text' placeholder='Name of Trick'/>
-      <select name='obstacle'>
+      <input name='name' type='text' placeholder='Name of Trick' onChange={(event) => setName(event.target.value)}/>
+      <select name='obstacle' onChange={(event) => setObstacle(event.target.value)}>
         <option value=''>Choose Your obstacle</option>
         <option value='flatground'>Flatground</option>
         <option value='ledge'>Ledge</option>
@@ -23,8 +36,8 @@ const Form = () => {
         <option value='stairs'>Stairs</option>
         <option value='pool'>Pool</option>
       </select>
-      <input type='text' placeholder='Link to Tutorial'/>
-      <button>Send it!</button>
+      <input name='tutorial' type='text' placeholder='Link to Tutorial' onChange={(event) => setTutorial(event.target.value)}/>
+      <button onClick={submitTrick}>Send it!</button>
     </form>
   )
 }
