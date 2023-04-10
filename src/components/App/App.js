@@ -5,18 +5,18 @@ import './App.css';
 
 const App = () => {
   const [tricks, setTricks] = useState([]);
-  const [error, setError] = useState('')
+  const [error, setError] = useState('');
 
   const getTricks = async () => {
     const url = 'http://localhost:3001/api/v1/tricks'
-    setError('')
+    setError('');
 
     try {
       const response = await fetch(url);
       const tricks = await response.json();
-      setTricks(tricks)
+      setTricks(tricks);
     } catch(error) {
-      setError(error.message)
+      setError(error.message);
     }
   }
 
@@ -25,7 +25,7 @@ const App = () => {
   }, [])
 
   const addTrick = (newTrick) => {
-    setTricks([...tricks, newTrick])
+    setTricks([...tricks, newTrick]);
   }
 
   return (

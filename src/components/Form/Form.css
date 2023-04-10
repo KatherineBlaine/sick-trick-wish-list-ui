@@ -5,6 +5,11 @@
   background-color: aliceblue;
 }
 
+.input:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
 button {
   margin: 20px;
   padding: 10px;
@@ -12,11 +17,6 @@ button {
   border: 1px solid green;
   background-color: aliceblue;
   color: green;
-}
-
-.input:hover {
-  cursor: pointer;
-  background-color: white;
 }
 
 button:hover{

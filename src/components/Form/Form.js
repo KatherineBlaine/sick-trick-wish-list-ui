@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import './Form.css';
 
 const Form = ( {addTrick} ) => {
-  const [name, setName] = useState('')
-  const [obstacle, setObstacle] = useState('')
-  const [stance, setStance] = useState('')
-  const [tutorial, setTutorial] = useState('')
+  const [name, setName] = useState('');
+  const [obstacle, setObstacle] = useState('');
+  const [stance, setStance] = useState('');
+  const [tutorial, setTutorial] = useState('');
 
   const submitTrick = event => {
     event.preventDefault();
@@ -17,7 +17,7 @@ const Form = ( {addTrick} ) => {
       obstacle,
       tutorial
     }
-    addTrick(newTrick)
+    addTrick(newTrick);
   }
 
   return (
