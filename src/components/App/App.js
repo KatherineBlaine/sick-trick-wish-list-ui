@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Tricks from '../Tricks/Tricks';
+import Form from '../Form/Form';
 import './App.css';
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
+      <Form />
       <Tricks tricks={tricks}/>
     </div>
   );
