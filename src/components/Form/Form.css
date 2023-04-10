@@ -3,3 +3,13 @@
   padding: 10px;
   border-radius: 5px;
 }
+
+button {
+  background-color: blue;
+  color: white;
+  border: none;
+}
+
+.input:hover {
+  cursor: pointer;
+}
